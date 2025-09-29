@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package format= "2">
+
+  <name>ros2_sweeping_generator</name>
+  <version>1.0.0</version>
+
+
+  <description>Example sweeping generator for ROS2-Python <description>
+
+  <author email="skarthi1@charlotte.edu">Sujjay Karthikeyan</author>
