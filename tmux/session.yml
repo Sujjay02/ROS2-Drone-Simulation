@@ -1,0 +1,56 @@
+# do not modify these
+root: ./
+name: sweeping_generator # Changed name for clarity
+socket_name: mrs
+attach: false
+tmux_options: -f /etc/ctu-mrs/tmux.conf
+# you can modify these
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=x500
+startup_window: sweeping_generator
+windows:
+  # The 'roscore' window is removed, as it's not needed in ROS 2.
+  - simulator:
+      layout: tiled
+      panes:
+        # 'roslaunch' becomes 'ros2 launch', and assumes a python launch file.
+        - ros2 launch mrs_multirotor_simulator multirotor_simulator.py custom_config:=./config/simulator.yaml
+  - hw_api:
+      layout: tiled
+      panes:
+        - waitForTime; ros2 launch mrs_multirotor_simulator hw_api.py custom_config:=./config/hw_api.yaml
+  - takeoff:
+      layout: tiled
+      panes:
+        - waitForHw; ros2 launch mrs_uav_autostart automatic_start.py custom_config:=./config/automatic_start.yaml
+        # 'rosservice call' syntax changes significantly in ROS 2. You MUST provide the service type.
+        - waitForControl; ros2 service call /$UAV_NAME/hw_api/arming std_srvs/srv/SetBool '{data: true}'; sleep 2; ros2 service call /$UAV_NAME/hw_api/offboard std_srvs/srv/Trigger '{}'
+  - status:
+      layout: tiled
+      panes:
+        - waitForHw; ros2 launch mrs_uav_status status.py
+  - control:
+      layout: tiled
+      panes:
+        # 'rospack find' is replaced with 'ros2 pkg prefix'. Path structure also changes.
+        - >-
+          waitForHw; ros2 launch mrs_uav_core core.py
+          platform_config:=$(ros2 pkg prefix mrs_multirotor_simulator)/share/mrs_multirotor_simulator/config/mrs_uav_system/$UAV_TYPE.yaml
+          custom_config:=./config/custom_config.yaml
+          world_config:=./config/world_config.yaml
+          network_config:=./config/network_config.yaml
+  - sweeping_generator:
+      layout: tiled
+      panes:
+        - waitForControl; ros2 launch example_sweeping_generator sweeping_generator.py
+        # NOTE: You must replace 'your_pkg/srv/YourServiceType' with the actual service type.
+        - 'history -s "ros2 service call /$UAV_NAME/sweeping_generator/start your_pkg/srv/YourServiceType ''{value: 3.0}''"'
+  - rviz:
+      layout: tiled
+      panes:
+        - waitForControl; ros2 launch mrs_uav_core rviz.py
+        - waitForControl; ros2 launch mrs_rviz_plugins load_robot.py
+        - waitForControl; waitForControl; ros2 launch mrs_rviz_plugins rviz_interface.py
+  - layout:
+      layout: tiled
+      panes:
+        - waitForControl; sleep 5; ~/.i3/layout_manager.sh ./layout.json
