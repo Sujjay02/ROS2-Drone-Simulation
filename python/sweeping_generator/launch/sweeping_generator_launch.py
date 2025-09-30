@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the share directory for the example_sweeping_generator package
-    pkg_share = get_package_share_directory('example_sweeping_generator')
+    pkg_share = get_package_share_directory('sweeping_generator')
 
     # Define the path to the ROS parameters file
     params_file = os.path.join(pkg_share, 'config', 'sweeping_generator.yaml')
@@ -27,7 +27,7 @@ def generate_launch_description():
     # 2. Define the Node to launch
     # This replaces the <node ...> tag and its contents.
     sweeping_generator_node = Node(
-        package='example_sweeping_generator',
+        package='weeping_generator',
         executable='sweeping_generator.py',
         name='sweeping_generator',
         output='screen',
