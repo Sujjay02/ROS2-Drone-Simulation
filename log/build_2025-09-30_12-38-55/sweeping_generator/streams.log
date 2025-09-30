@@ -1,0 +1,30 @@
+[0.017s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator
+[0.154s] -- The C compiler identification is GNU 13.3.0
+[0.322s] -- The CXX compiler identification is GNU 13.3.0
+[0.368s] -- Detecting C compiler ABI info
+[0.518s] -- Detecting C compiler ABI info - done
+[0.534s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.535s] -- Detecting C compile features
+[0.536s] -- Detecting C compile features - done
+[0.560s] -- Detecting CXX compiler ABI info
+[0.709s] -- Detecting CXX compiler ABI info - done
+[0.725s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.726s] -- Detecting CXX compile features
+[0.726s] -- Detecting CXX compile features - done
+[0.739s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.972s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.143s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.153s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.246s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.327s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.333s] -- Found mrs_msgs: 2.0.0 (/opt/ros/jazzy/share/mrs_msgs/cmake)
+[1.570s] [31mCMake Error at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:95 (message):
+[1.571s]   rosidl_generate_interfaces() the passed file 'srv/Path.srv' doesn't exist
+[1.571s]   relative to the CMAKE_CURRENT_SOURCE_DIR
+[1.571s]   '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux'
+[1.571s] Call Stack (most recent call first):
+[1.571s]   CMakeLists.txt:13 (rosidl_generate_interfaces)
+[1.571s] 
+[1.571s] [0m
+[1.571s] -- Configuring incomplete, errors occurred!
+[1.585s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator
