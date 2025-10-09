@@ -1,0 +1,17 @@
+[0.014s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator
+[0.034s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.346s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.349s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.397s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.434s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.436s] -- Found mrs_msgs: 2.0.0 (/opt/ros/jazzy/share/mrs_msgs/cmake)
+[0.574s] [31mCMake Error at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:95 (message):
+[0.575s]   rosidl_generate_interfaces() the passed file 'srv/Path.srv' doesn't exist
+[0.575s]   relative to the CMAKE_CURRENT_SOURCE_DIR
+[0.575s]   '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux'
+[0.575s] Call Stack (most recent call first):
+[0.575s]   CMakeLists.txt:13 (rosidl_generate_interfaces)
+[0.575s] 
+[0.575s] [0m
+[0.575s] -- Configuring incomplete, errors occurred!
+[0.583s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator

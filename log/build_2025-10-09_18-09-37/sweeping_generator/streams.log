@@ -1,0 +1,20 @@
+[0.016s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator
+[0.071s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.370s] Traceback (most recent call last):
+[2.371s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>
+[2.371s]     from ament_package.templates import get_environment_hook_template_path
+[2.371s] ModuleNotFoundError: No module named 'ament_package'
+[2.426s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):
+[2.426s]   execute_process(/usr/bin/python3
+[2.426s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py
+[2.426s]   /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator/ament_cmake_package_templates/templates.cmake)
+[2.426s]   returned error code 1
+[2.427s] Call Stack (most recent call first):
+[2.427s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[2.427s]   /opt/ros/jazzy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[2.427s]   /opt/ros/jazzy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[2.427s]   CMakeLists.txt:7 (find_package)
+[2.427s] 
+[2.427s] [0m
+[2.427s] -- Configuring incomplete, errors occurred!
+[2.434s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/build/sweeping_generator' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/install/sweeping_generator

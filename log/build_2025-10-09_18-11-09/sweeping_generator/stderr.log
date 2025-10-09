@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:95 (message):
+  rosidl_generate_interfaces() the passed file 'srv/Path.srv' doesn't exist
+  relative to the CMAKE_CURRENT_SOURCE_DIR
+  '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux'
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (rosidl_generate_interfaces)
+
+[0m
