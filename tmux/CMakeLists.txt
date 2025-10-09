@@ -1,41 +1,45 @@
 cmake_minimum_required(VERSION 3.8)
 project(sweeping_generator)
 
-# Find dependencies.
-# ament_cmake is the primary build tool.
-# rosidl_default_generators is needed to build .srv/.msg files.
+# Default to C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# Find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-find_package(mrs_msgs REQUIRED) # Assuming your .srv files might depend on this
+find_package(ament_cmake_python REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(mrs_msgs REQUIRED)
 
-# This single command replaces 'add_service_files' and 'generate_messages'.
-# It generates the necessary C++ and Python code for your services.
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "srv/Path.srv"
-  "srv/Start.srv"
-  # Add any message packages your .srv files depend on here.
-  DEPENDENCIES mrs_msgs
-)
-
-# Install the package manifest file.
+# Install Python scripts
 install(
-  FILES package.xml
-  DESTINATION share/${PROJECT_NAME}
-)
-
-# Install the Python node script to the package's library directory.
-install(
-  PROGRAMS scripts/sweeping_generator.py
+  PROGRAMS
+    scripts/sweeping_generator.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# Install the launch directory.
-# Remember to convert your .launch file to a Python launch file.
+# Install launch files
 install(
   DIRECTORY launch/
-  DESTINATION share/${PROJECT_NAME}/
+  DESTINATION share/${PROJECT_NAME}/launch
 )
 
-# This final command is the equivalent of catkin_package().
-# It registers the package with the ament index, making it discoverable.
+# Install config files
+install(
+  DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
+# Install scripts directory (for reference/backup)
+install(
+  DIRECTORY scripts/
+  DESTINATION share/${PROJECT_NAME}/scripts
+  USE_SOURCE_PERMISSIONS
+)
+
 ament_package()
