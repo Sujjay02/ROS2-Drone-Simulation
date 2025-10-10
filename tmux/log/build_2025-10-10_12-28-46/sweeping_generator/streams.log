@@ -1,0 +1,58 @@
+[0.009s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator
+[0.073s] -- The C compiler identification is GNU 13.3.0
+[0.150s] -- The CXX compiler identification is GNU 13.3.0
+[0.167s] -- Detecting C compiler ABI info
+[0.288s] -- Detecting C compiler ABI info - done
+[0.296s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.297s] -- Detecting C compile features
+[0.297s] -- Detecting C compile features - done
+[0.315s] -- Detecting CXX compiler ABI info
+[0.458s] -- Detecting CXX compiler ABI info - done
+[0.465s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.465s] -- Detecting CXX compile features
+[0.465s] -- Detecting CXX compile features - done
+[0.467s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.644s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.735s] -- Found rclpy: 7.1.5 (/opt/ros/jazzy/share/rclpy/cmake)
+[0.736s] -- Found mrs_msgs: 2.0.0 (/opt/ros/jazzy/share/mrs_msgs/cmake)
+[0.765s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.775s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.785s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.798s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.982s] -- Configuring done (1.0s)
+[0.984s] -- Generating done (0.0s)
+[0.986s] -- Build files have been written to: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator
+[0.992s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux -DCMAKE_INSTALL_PREFIX=/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator
+[0.993s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator -- -j20 -l20
+[1.038s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator -- -j20 -l20
+[1.050s] Invoking command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator
+[1.062s] -- Install configuration: ""
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/lib/sweeping_generator/sweeping_generator.py
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/launch
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/launch/sweeping_generator_launch.py
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/hw_api.yaml
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/simulator.yaml
+[1.063s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/network_config.yaml
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/world_config.yaml
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/sweeping_generator.yaml
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/custom_config.yaml
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/config/automatic_start.yaml
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/scripts
+[1.064s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/scripts/sweeping_generator.py
+[1.065s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/ament_index/resource_index/package_run_dependencies/sweeping_generator
+[1.065s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/ament_index/resource_index/parent_prefix_path/sweeping_generator
+[1.065s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/environment/ament_prefix_path.sh
+[1.065s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/environment/ament_prefix_path.dsv
+[1.066s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/environment/path.sh
+[1.066s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/environment/path.dsv
+[1.066s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/local_setup.bash
+[1.066s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/local_setup.sh
+[1.067s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/local_setup.zsh
+[1.067s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/local_setup.dsv
+[1.067s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/package.dsv
+[1.067s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/ament_index/resource_index/packages/sweeping_generator
+[1.068s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/cmake/sweeping_generatorConfig.cmake
+[1.068s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/cmake/sweeping_generatorConfig-version.cmake
+[1.068s] -- Installing: /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/install/sweeping_generator/share/sweeping_generator/package.xml
+[1.071s] Invoked command in '/home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/sujjay/ros2_ws/src/ROS2-Drone-Simulation/tmux/build/sweeping_generator

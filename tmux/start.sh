@@ -26,21 +26,54 @@ if [ -f "install/setup.bash" ]; then
     source "install/setup.bash"
 fi
 
-# Load the session using tmuxp, which starts it in the background
-echo "Loading tmuxp session from '${CONFIG_FILE}'..."
-tmuxp load -d "$CONFIG_FILE"
+# ...existing code...
+
+# Wait a short moment to let tmuxp create the session
+sleep 0.3
 
 # --- Attach or Switch Logic ---
+# Try the requested socket first; fall back to the default server if needed.
 
-# If we are NOT currently in a tmux session
-if [ -z "$TMUX" ]; then
-    echo "Attaching to new session..."
-    # Attach to the session on the correct socket
-    tmux -L "$TMUX_SOCKET_NAME" attach-session -t "$TMUX_SESSION_NAME"
+# helper to test for a session on a given socket
+has_session_on_socket() {
+  local socket="$1"; local session="$2"
+  if [ -n "$socket" ]; then
+    tmux -L "$socket" has-session -t "$session" >/dev/null 2>&1
+    return $?
+  else
+    tmux has-session -t "$session" >/dev/null 2>&1
+    return $?
+  fi
+}
 
-# If we ARE currently in a tmux session
+# pick where the session exists
+TARGET_SOCKET=""
+if has_session_on_socket "$TMUX_SOCKET_NAME" "$TMUX_SESSION_NAME"; then
+  TARGET_SOCKET="$TMUX_SOCKET_NAME"
+elif has_session_on_socket "" "$TMUX_SESSION_NAME"; then
+  TARGET_SOCKET=""
 else
-    echo "Switching to new session..."
-    # Detach the current client and immediately run the command to attach to the new session
-    tmux detach-client -E "tmux -L '$TMUX_SOCKET_NAME' attach-session -t '$TMUX_SESSION_NAME'"
+  echo "Session '$TMUX_SESSION_NAME' not found on socket '$TMUX_SOCKET_NAME' or default server."
+  echo "Run 'tmux ls' and 'tmux -L $TMUX_SOCKET_NAME ls' to inspect servers."
+  exit 1
 fi
+
+# If not currently inside tmux, attach normally to the correct server
+if [ -z "$TMUX" ]; then
+  echo "Attaching to session '$TMUX_SESSION_NAME' on socket '${TARGET_SOCKET:-default}'..."
+  if [ -n "$TARGET_SOCKET" ]; then
+    tmux -L "$TARGET_SOCKET" attach-session -t "$TMUX_SESSION_NAME"
+  else
+    tmux attach-session -t "$TMUX_SESSION_NAME"
+  fi
+
+# If inside tmux, detach client and reattach to the target server
+else
+  echo "Switching to session '$TMUX_SESSION_NAME' on socket '${TARGET_SOCKET:-default}'..."
+  if [ -n "$TARGET_SOCKET" ]; then
+    tmux detach-client -E "tmux -L '$TARGET_SOCKET' attach-session -t '$TMUX_SESSION_NAME'"
+  else
+    tmux detach-client -E "tmux attach-session -t '$TMUX_SESSION_NAME'"
+  fi
+fi
+# ...existing code...

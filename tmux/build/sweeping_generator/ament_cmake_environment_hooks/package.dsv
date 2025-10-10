@@ -1,0 +1,4 @@
+source;share/sweeping_generator/local_setup.bash
+source;share/sweeping_generator/local_setup.dsv
+source;share/sweeping_generator/local_setup.sh
+source;share/sweeping_generator/local_setup.zsh
